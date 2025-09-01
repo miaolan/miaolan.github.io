@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Miaolan Xie</title>
 
 <meta name="description" content="Interested in  continuous optimization." />
@@ -17,53 +18,82 @@
 </script>
 
 <link href="https://fonts.googleapis.com/css?family=Noto Sans" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
 
 body {
 	background-color: #FFF;
 	text-align: left;
-	font-size: 16pt;
+	font-size: 17px;
+	line-height: 1.6;
 
-	font-family: 'Abril Fatface', sans-serif;
+	font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+	font-kerning: normal;
+	font-feature-settings: "kern" 1, "liga" 1, "clig" 1;
+	text-rendering: optimizeLegibility;
 
 	color: rgb(42,50,65); 
 	margin: auto;
-    width: 1220px;
+    max-width: 1220px;
+    padding: 0 24px;
 }
 ol.pubs {
-    font-size: 11pt;
+    font-size: 0.95em;
+    line-height: 1.4;
 }
 h1, h2, h3 {
 	font-weight: normal;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 h2, h3 {
 	border-bottom-style: solid;
-	font-size: 22pt;
+	font-size: 20pt;
 	border-color: #EEE;
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 }
-h1 { font-size: 29pt; }
+h1 { font-size: 26pt; }
 
 a {
-    color: #0870a9;
-    text-decoration: none;
-    background-image: linear-gradient(to right, #0870a9 25%, rgba(255,255,255,0) 0%);
-    background-position: bottom;
-    background-size: 3px 1px;
-    background-repeat: repeat-x;
+    color: #000;
+    text-decoration: underline;
+    background-image: none;
 }
 a:hover {
-    color: #71CAFF
+    color: #0870a9;
 }
 a.papertitle {
-    color: #70a808;
+    color: inherit;
+    text-decoration: underline;
     background-image: none;
 }
 a.papertitle:hover {
-    color: #95cb0b;
+    color: #0870a9;
 }
+/* Header nav (menu) font and hover color */
+#menu-bar a,
+#menu-bar a:link,
+#menu-bar a:visited {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #000 !important;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+    display: inline-block;
+    padding: 2px 6px;
+}
+#menu-bar a:hover,
+#menu-bar a:focus,
+#menu-bar a:active,
+#menu-bar a:focus-visible {
+    color: #0870a9 !important;
+    text-decoration: underline;
+    outline: none;
+}
+#menu-bar a.current { color: #000 !important; }
+#menu-bar a.current:hover { color: #0870a9 !important; }
 
 .bpa {
     color: #a80b08;
@@ -77,7 +107,7 @@ em {
 	color: #000;
 }
 li a.papertitle {
-	font-size: 15pt;
+	font-size: 1.0em;
 	font-weight: normal;
 }
 ol.pubs li ul {
@@ -85,7 +115,7 @@ ol.pubs li ul {
 }
 
 ol.pubs li {
-	adadasdadasdasd-list-style-type: decimal-leading-zero;
+	list-style-type: decimal-leading-zero;
 	margin-bottom: 1em;
 	padding-left: 0.5em;
 }
@@ -98,6 +128,88 @@ td.firstCol {
     font-weight: 1000;
     text-align: right;
     vertical-align: top;
+}
+/* Talks layout */
+.talk-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.talk-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.talk-left {
+    flex: 1 1 auto;
+}
+.talk-venue {
+    flex: 1 1 auto;
+    font-style: italic;
+    word-break: normal;
+}
+.talk-note {
+    font-size: 0.95em;
+    font-style: normal;
+}
+.talk-date {
+    white-space: nowrap;
+    min-width: 8ch;
+}
+.talk-venue::before {
+    content: "at ";
+    font-style: normal;
+}
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* Publications flex layout */
+.pub-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.pub-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+.pub-left { flex: 1 1 auto; }
+.pub-right { white-space: nowrap; text-align: left; font-size: 0.95em; }
+.pub-venue { font-style: italic; }
+.pub-year { font-style: normal; }
+.pub-authors { font-size: 0.95em; }
+.pub-note { font-size: 0.95em; text-align: left; }
+.pub-list li { padding: 6px 0; }
+.pub-list + br { display: none; }
+/* Publications layout */
+.pub-section table {
+    width: 100%;
+    margin-bottom: 12px;
+    border-collapse: collapse;
+}
+.pub-section td[scope="row"] a {
+    display: inline-block;
+    font-size: 1.05em;
+}
+.pub-section td[style*="padding-bottom: 5px"] {
+    font-size: 0.95em;
+}
+.pub-section td[style*="padding-left:33px"] {
+    text-align: left;
+    padding-left: 0;
+}
+@media (max-width: 480px) {
+  .pub-row, .talk-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .pub-right, .talk-date {
+    white-space: normal;
+  }
 }
 </style>
 </head>
@@ -158,78 +270,88 @@ td.firstCol {
 
          <a name="research"></a>
 		<h2 style="width: 100%; text-align: left;"> Publications </h2>
-		<p style="width: 95%; text-align: left; margin-left: 30px">
+		<p class="pub-section" style="width: 95%; text-align: left; margin-left: 30px">
 
 		<strong> * </strong> indicates authorship in alphabetical order by last name.
 
-		<table style="width: 95%">
-			<tbody>
-			  <tr>
-				<td scope="row"> * <a href="https://arxiv.org/abs/2301.00477" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2301.00477'); return false;"> A Sequential Quadratic Programming Method with High Probability Complexity Bounds <br>&nbsp; for Nonlinear Equality Constrained Stochastic Optimization</a> </td>
-					 <!-- <td style="text-align: right"> Major Revision at SIAM Journal on Optimization (SIOPT), 2023 </td> -->
-			  </tr>
-			  <tr>
-				<td style="padding-bottom: 5px;padding-left: 14px"> Albert Berahas, Miaolan Xie, Baoyu Zhou. </td>
-				<!-- <td style="text-align: right"> <a href="https://arxiv.org/abs/2301.00477" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2301.00477'); return false;">arXiv</a> -->
-			  </tr>
-			  <tr><td style="padding-left:33px"> &bull; SIAM Journal on Optimization, 2025 </td></tr>
-			</tbody>
-		  </table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://arxiv.org/abs/2308.13161" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2308.13161'); return false;"> First- and Second-Order Stochastic Adaptive Regularization with Cubics: High Probability Iteration and Sample Complexity </a>
+				<div class="pub-authors"> Katya Scheinberg<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">Submitted</span>, <span class="pub-year">2025</span> </div>
+			</div>
+		  </li>
+		</ul>
 		  <br>
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> *  <a href="https://arxiv.org/abs/2303.06838" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2303.06838'); return false;"> Sample Complexity Analysis for Adaptive Optimization Algorithms with Stochastic Oracles </a> </td>
-			   	<!-- <td style="text-align: right"> Major Revision at Mathematical Programming, 2023 </td> -->
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Billy Jin, Katya Scheinberg, Miaolan Xie. </td>
-			  <!-- <td style="text-align: right"> <a href="https://arxiv.org/abs/2303.06838" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2303.06838'); return false;">arXiv</a> -->
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; Mathematical Programming, 2025 </td></tr>
-			<tr><td style="padding-left:33px"> <strong> &bull; 🏆 Second Place for 2023 Student Paper Prize of INFORMS Optimization Society </strong></td></tr>
-		  </tbody>
-		</table>
+
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://arxiv.org/abs/2301.00477" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2301.00477'); return false;"> A Sequential Quadratic Programming Method with High Probability Complexity Bounds for Nonlinear Equality Constrained Stochastic Optimization</a>
+				<div class="pub-authors"> Albert Berahas<strong> * </strong>, Miaolan Xie<strong> * </strong>, Baoyu Zhou<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">SIAM Journal on Optimization</span>, <span class="pub-year">2025</span> </div>
+			</div>
+		  </li>
+		</ul>
+		  <br>
+
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://arxiv.org/abs/2303.06838" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2303.06838'); return false;"> Sample Complexity Analysis for Adaptive Optimization Algorithms with Stochastic Oracles </a>
+				<div class="pub-authors"> Billy Jin<strong> * </strong>, Katya Scheinberg<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+				<div class="pub-note"><strong> 🏆 Second Place for 2023 Student Paper Prize of INFORMS Optimization Society </strong></div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">Mathematical Programming</span>, <span class="pub-year">2025</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-				<td> *  <a href="https://arxiv.org/abs/2106.06454" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2106.06454'); return false;"> High Probability Complexity Bounds for Adaptive Step Search Based on Stochastic Oracles </a></td> 
-			<!-- <td style="text-align: right"> <a href="https://arxiv.org/abs/2106.06454" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2106.06454'); return false;">arXiv</a> -->
-			</tr>
-			<tr><td style="padding-bottom: 5px;padding-left: 14px"> Billy Jin, Katya Scheinberg, Miaolan Xie. </td></tr>
-			   <tr>	<td style="padding-left:33px"> &bull; SIAM Journal on Optimization, 2024 </td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://arxiv.org/abs/2106.06454" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2106.06454'); return false;"> High Probability Complexity Bounds for Adaptive Step Search Based on Stochastic Oracles </a>
+				<div class="pub-authors"> Billy Jin<strong> * </strong>, Katya Scheinberg<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">SIAM Journal on Optimization</span>, <span class="pub-year">2024</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> * <a href="https://arxiv.org/abs/2302.09128" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2302.09128'); return false;">A Stochastic Quasi-Newton Method in the Absence of Common Random Numbers </a></td>
-			   	<!-- <td style="text-align: right"> Preprint, 2023 </td> -->
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Matt Menickelly, Stefan Wild, Miaolan Xie. </td>
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; Submitted, 2024</td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://arxiv.org/abs/2302.09128" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2302.09128'); return false;">A Stochastic Quasi-Newton Method in the Absence of Common Random Numbers </a>
+				<div class="pub-authors"> Matt Menickelly<strong> * </strong>, Stefan Wild<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">Submitted</span>, <span class="pub-year">2024</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> * <a href="https://arxiv.org/abs/2308.13161" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2308.13161'); return false;">Stochastic Adaptive Regularization Method with Cubics:<br>&nbsp;&nbsp; A High Probability Complexity Bound </a> </td>
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Katya Scheinberg, Miaolan Xie. </td>
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; Winter Simulation Conference, 2023 </td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://ieeexplore.ieee.org/abstract/document/10408598" target="_blank" onclick="trackOutboundLink('https://ieeexplore.ieee.org/abstract/document/10408598'); return false;">Stochastic Adaptive Regularization Method with Cubics: A High Probability Complexity Bound </a>
+				<div class="pub-authors"> Katya Scheinberg<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">Winter Simulation Conference</span>, <span class="pub-year">2023</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
 
@@ -248,17 +370,17 @@ td.firstCol {
 		<br> -->
 
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> * <a href="https://proceedings.neurips.cc/paper/2021/file/4cb811134b9d39fc3104bd06ce75abad-Paper.pdf" target="_blank" onclick="trackOutboundLink('https://proceedings.neurips.cc/paper/2021/file/4cb811134b9d39fc3104bd06ce75abad-Paper.pdf'); return false;">High Probability Complexity Bounds for Line Search Based on Stochastic Oracles</a> </td>
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Billy Jin, Katya Scheinberg, Miaolan Xie. </td>
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; NeurIPS, 2021  </td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://proceedings.neurips.cc/paper/2021/file/4cb811134b9d39fc3104bd06ce75abad-Paper.pdf" target="_blank" onclick="trackOutboundLink('https://proceedings.neurips.cc/paper/2021/file/4cb811134b9d39fc3104bd06ce75abad-Paper.pdf'); return false;">High Probability Complexity Bounds for Line Search Based on Stochastic Oracles</a>
+				<div class="pub-authors"> Billy Jin<strong> * </strong>, Katya Scheinberg<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">NeurIPS</span>, <span class="pub-year">2021</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
 		<!-- <table style="width: 95%">
@@ -275,17 +397,17 @@ td.firstCol {
 		</table>
 		<br> -->	
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> <a href="https://arxiv.org/abs/2107.00219" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2107.00219'); return false;">ControlBurn: Feature Selection by Sparse Forests</a> </td>
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Brian Liu, Miaolan Xie, Madeleine Udell. </td>
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; KDD, 2021  </td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://arxiv.org/abs/2107.00219" target="_blank" onclick="trackOutboundLink('https://arxiv.org/abs/2107.00219'); return false;">ControlBurn: Feature Selection by Sparse Forests</a>
+				<div class="pub-authors"> Brian Liu, Miaolan Xie, Madeleine Udell. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">KDD</span>, <span class="pub-year">2021</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
 		<!-- <table style="width: 95%">
@@ -302,30 +424,30 @@ td.firstCol {
 		</table>
 		<br> -->
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> * <a href="https://openreview.net/pdf?id=2BdnlBkgVkWN" target="_blank" onclick="trackOutboundLink('https://openreview.net/pdf?id=2BdnlBkgVkWN'); return false;">Stochastic Adaptive Regularization Method with Cubics: A High Probability Complexity Bound </a> </td>
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Katya Scheinberg, Miaolan Xie. </td>
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; NeurIPS OPT Workshop, 2022 </td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://openreview.net/pdf?id=2BdnlBkgVkWN" target="_blank" onclick="trackOutboundLink('https://openreview.net/pdf?id=2BdnlBkgVkWN'); return false;">Stochastic Adaptive Regularization Method with Cubics: A High Probability Complexity Bound </a>
+				<div class="pub-authors"> Katya Scheinberg<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">NeurIPS OPT Workshop</span>, <span class="pub-year">2022</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> * <a href="https://opt-ml.org/papers/2021/paper29.pdf" target="_blank" onclick="trackOutboundLink('https://opt-ml.org/papers/2021/paper29.pdf'); return false;">High Probability Step Size Lower Bound for Adaptive Stochastic Optimization </a> </td>
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Billy Jin, Katya Scheinberg, Miaolan Xie. </td>
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; NeurIPS OPT Workshop, 2021  </td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://opt-ml.org/papers/2021/paper29.pdf" target="_blank" onclick="trackOutboundLink('https://opt-ml.org/papers/2021/paper29.pdf'); return false;">High Probability Step Size Lower Bound for Adaptive Stochastic Optimization </a>
+				<div class="pub-authors"> Billy Jin<strong> * </strong>, Katya Scheinberg<strong> * </strong>, Miaolan Xie<strong> * </strong>. </div>
+			  </div>
+			  <div class="pub-right"> <span class="pub-venue">NeurIPS OPT Workshop</span>, <span class="pub-year">2021</span> </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
 		<!-- <table style="width: 95%">
@@ -342,17 +464,17 @@ td.firstCol {
 		</table>
 		<br> -->		
 
-		<table style="width: 95%">
-		  <tbody>
-			<tr>
-			  <td scope="row"> <a href="https://uwspace.uwaterloo.ca/handle/10012/10474" target="_blank" onclick="trackOutboundLink('https://uwspace.uwaterloo.ca/handle/10012/10474'); return false;">Inner Approximation of Convex Cones via Primal-Dual Ellipsoidal norms </a> </td>
-			</tr>
-			<tr>
-			  <td style="padding-bottom: 5px;padding-left: 14px"> Miaolan Xie. </td>
-			</tr>
-			<tr><td style="padding-left:33px"> &bull; Master's Thesis  </td></tr>
-		  </tbody>
-		</table>
+		<ul class="pub-list">
+		  <li>
+			<div class="pub-row">
+			  <div class="pub-left">
+				<a class="papertitle" href="https://uwspace.uwaterloo.ca/handle/10012/10474" target="_blank" onclick="trackOutboundLink('https://uwspace.uwaterloo.ca/handle/10012/10474'); return false;">Inner Approximation of Convex Cones via Primal-Dual Ellipsoidal norms </a>
+				<div class="pub-authors"> Miaolan Xie. </div>
+			  </div>
+			  <div class="pub-right"> Master's Thesis </div>
+			</div>
+		  </li>
+		</ul>
 		<br>
 
 
@@ -399,69 +521,81 @@ td.firstCol {
 
 		<p> Reliable and Adaptive Stochastic Optimization in the Face of Messy Data (with Highly Corrupted Inputs and
 			Heavy-Tailed noises)</p> 
-		<ul>
-		<li> International Conference on Continuous Optimization (ICCOPT), July 2025 </li>
-		<li> Loyola University Chicago, Mathematics and Statistics Department Seminars, April 2025 </li>
-		<li> University of Illinois Urbana-Champaign, SINE Seminars, April 2025 </li>
-		<li> Argonne National Laboratory, LANS Seminars, April 2025 </li>
-		<li> INFORMS Annual Meeting, October 2024 </li>
+		<ul class="talk-list">
+		<li><span class="talk-venue"> International Conference on Continuous Optimization (ICCOPT)</span><span class="talk-date"> July 2025 </span></li>
+		<li><span class="talk-venue"> Loyola University Chicago, Mathematics and Statistics Department Seminars</span><span class="talk-date"> April 2025 </span></li>
+		<li><span class="talk-venue"> University of Illinois Urbana-Champaign, SINE Seminars</span><span class="talk-date"> April 2025 </span></li>
+		<li><span class="talk-venue"> Argonne National Laboratory, LANS Seminars</span><span class="talk-date"> April 2025 </span></li>
+		<li><span class="talk-venue"> INFORMS Annual Meeting</span><span class="talk-date"> October 2024 </span></li>
 		</ul>
 		</p>
 
 		<p> Reliable Adaptive Stochastic Optimization for Messy Data: with High Probability Guarantees </p> 
-		<ul>
-		<li> The 2023 Annual Midwest Optimization Meeting, October 2023 </li>
-		<li> 🏆 INFORMS Annual Meeting, October 2023 <b><strong><i> (Second Place in Student Paper Prize of INFORMS Optimization Society) </i></strong></b> </li>
-		<li> 🏆 YinzOR Student Conference, August 2023 <b><strong><i> (Second Place in Flash Talk Competition) </i></strong></b> </li>
+		<ul class="talk-list">
+		<li><span class="talk-venue"> The 2023 Annual Midwest Optimization Meeting</span><span class="talk-date"> October 2023 </span></li>
+		<li>
+			<div class="talk-left">
+				<span class="talk-venue"> INFORMS Annual Meeting</span>
+				<div class="talk-note"><strong>🏆 Second Place in Student Paper Prize of INFORMS Optimization Society</strong></div>
+			</div>
+			<span class="talk-date"> October 2023 </span>
+		</li>
+		<li>
+			<div class="talk-left">
+				<span class="talk-venue"> YinzOR Student Conference</span>
+				<div class="talk-note"><strong>🏆 Second Place in Flash Talk Competition</strong></div>
+			</div>
+			<span class="talk-date"> August 2023 </span>
+		</li>
 		<!-- <li> INFORMS Annual Meeting, October 2022 </li> -->
 		</ul>
 		</p>
 
 		<p> High Probability Complexity Bounds for Adaptive Optimization Methods with Stochastic Oracles </p> 
-		<ul>
-		<li> Modeling and Optimization: Theory and Applications Conference (MOPTA), August 2023 </li>
-		<li> International Conference on Stochastic Programming, July 2023 </li>
-		<li> SIAM Conference on Optimization, June 2023 </li>
+		<ul class="talk-list">
+		<li><span class="talk-venue"> Modeling and Optimization: Theory and Applications Conference (MOPTA)</span><span class="talk-date"> August 2023 </span></li>
+		<li><span class="talk-venue"> International Conference on Stochastic Programming</span><span class="talk-date"> July 2023 </span></li>
+		<li><span class="talk-venue"> SIAM Conference on Optimization</span><span class="talk-date"> June 2023 </span></li>
 		<!-- <li> INFORMS Annual Meeting, October 2022 </li> -->
 		</ul>
 		</p>
 		<p> Stochastic Adaptive Regularization Method with Cubics: A High Probability Complexity Bound </p> 
-		<ul>
-		<li> The 25th International Symposium on Mathematical Programming, July 2024 </li>
-		<li> INFORMS Optimization Society Conference, March 2024 </li>
-		<li> 2023 Winter Simulation Conference, December 2023 </li>
-		<li> New York City Operations Day (Poster), May 2023 </li>
-		<li> Conference on Neural Information Processing Systems OPT Workshop (Poster), December 2022 </li>
-		<li> INFORMS Annual Meeting, October 2022 </li>
+		<ul class="talk-list">
+		<li><span class="talk-venue"> The 25th International Symposium on Mathematical Programming</span><span class="talk-date"> July 2024 </span></li>
+		<li><span class="talk-venue"> INFORMS Optimization Society Conference</span><span class="talk-date"> March 2024 </span></li>
+		<li><span class="talk-venue"> 2023 Winter Simulation Conference</span><span class="talk-date"> December 2023 </span></li>
+		<li><span class="talk-venue"> New York City Operations Day (Poster)</span><span class="talk-date"> May 2023 </span></li>
+		<li><span class="talk-venue"> Conference on Neural Information Processing Systems OPT Workshop (Poster)</span><span class="talk-date"> December 2022 </span></li>
+		<li><span class="talk-venue"> INFORMS Annual Meeting</span><span class="talk-date"> October 2022 </span></li>
 		</ul>
 		</p>
 		<p> High Probability Iteration and Sample Complexity for Adaptive Step Search via Stochastic Oracles </p> 
-		<ul>
+		<ul class="talk-list">
 		<!-- <li> INFORMS Annual Meeting, October 2022 </li> -->
-		<li> Joint PhD Colloquium (Cornell ORIE, Columbia DRO, IEOR, NYU Stern), May 2023 </li>
-		<li> International Conference on Continuous Optimization (ICCOPT), July 2022 </li>
+		<li><span class="talk-venue"> Joint PhD Colloquium (Cornell ORIE, Columbia DRO, IEOR, NYU Stern)</span><span class="talk-date"> May 2023 </span></li>
+		<li><span class="talk-venue"> International Conference on Continuous Optimization (ICCOPT)</span><span class="talk-date"> July 2022 </span></li>
 		</ul>
 		</p>
 		<p> High Probability Complexity Bounds for Line Search Based on Stochastic Oracles </p>
-		<ul>
-		<li> INFORMS Optimization Society Conference, March 2022 </li>	
-		<li> Conference on Neural Information Processing Systems (Poster), December 2021 </li>
-		<li> INFORMS Annual Meeting, October 2021 </li>
-		<li> Cornell ORIE Young Researchers Workshop (Poster), October 2021 </li>
-		<li> Modeling and Optimization: Theory and Applications Conference, August 2021 </li>
+		<ul class="talk-list">
+		<li><span class="talk-venue"> INFORMS Optimization Society Conference</span><span class="talk-date"> March 2022 </span></li>	
+		<li><span class="talk-venue"> Conference on Neural Information Processing Systems (Poster)</span><span class="talk-date"> December 2021 </span></li>
+		<li><span class="talk-venue"> INFORMS Annual Meeting</span><span class="talk-date"> October 2021 </span></li>
+		<li><span class="talk-venue"> Cornell ORIE Young Researchers Workshop (Poster)</span><span class="talk-date"> October 2021 </span></li>
+		<li><span class="talk-venue"> Modeling and Optimization: Theory and Applications Conference</span><span class="talk-date"> August 2021 </span></li>
 		<!-- <li> Item 3 </li> -->
 		</ul>
 		</p>
 		<p> High Probability Step Size Lower Bound for Adaptive Stochastic Optimization </p>
-		<ul>
-		<li> Conference on Neural Information Processing Systems OPT Workshop (Poster), December 2021 </li>
+		<ul class="talk-list">
+		<li><span class="talk-venue"> Conference on Neural Information Processing Systems OPT Workshop (Poster)</span><span class="talk-date"> December 2021 </span></li>
 		<!-- <li> ... </li> -->
 		<!-- <li> Item 3 </li> -->
 		</ul>
 		</p>
 		<p> ControlBurn: Feature Selection by Sparse Forests </p>
-		<ul>
-		<li> ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, August 2021 </li>
+		<ul class="talk-list">
+		<li><span class="talk-venue"> ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</span><span class="talk-date"> August 2021 </span></li>
 		<!-- <li> ... </li> -->
 		<!-- <li> Item 3 </li> -->
 		</ul>
@@ -535,8 +669,8 @@ td.firstCol {
 		<!-- <p>  </p> -->
 		<ul>
 		<li> Email: miaolanx at purdue dot edu </li>
-		<li> Address: 315 Grant St, West Lafayette, IN 47906 </li>
-		<!-- <li> Item 3 </li> -->
+		<li> Office: Grissom 282 </li>
+		<!-- <li> 315 Grant St, West Lafayette, IN 47906 </li> -->
 		</ul>
 
 
